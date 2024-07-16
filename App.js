@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import {
   AmbientLight,
   BoxBufferGeometry,
+  SphereGeometry,
   Fog,
   GridHelper,
   Mesh,
@@ -76,7 +77,7 @@ export default function App() {
 class IconMesh extends Mesh {
   constructor() {
     super(
-      new BoxBufferGeometry(3.0, 3.0, 3.0),
+      new SphereGeometry(),
       new MeshStandardMaterial({
         map: new TextureLoader().load(require("./pont.jpg")),
       })
