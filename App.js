@@ -32,13 +32,13 @@ export default function App() {
     renderer.setClearColor(sceneColor);
 
     const camera = new PerspectiveCamera(70, width / height, 0.01, 1000);
-    camera.position.set(2, 5, 5);
+    camera.position.set(5, 2, 6);
 
     const scene = new Scene();
     scene.fog = new Fog(sceneColor, 1, 10000);
     scene.add(new GridHelper(10, 10));
 
-    const ambientLight = new AmbientLight(0x101010);
+    const ambientLight = new AmbientLight(0x404010);
     scene.add(ambientLight);
 
     const pointLight = new PointLight(0xffffff, 2, 1000, 1);
@@ -56,8 +56,8 @@ export default function App() {
     camera.lookAt(cube.position);
 
     function update() {
-      cube.rotation.y += 0.05;
-      cube.rotation.x += 0.025;
+      cube.rotation.y += 0.005;
+      cube.rotation.x += 0.005;
     }
 
     // Setup an animation loop
@@ -76,9 +76,9 @@ export default function App() {
 class IconMesh extends Mesh {
   constructor() {
     super(
-      new BoxBufferGeometry(1.0, 1.0, 1.0),
+      new BoxBufferGeometry(3.0, 3.0, 3.0),
       new MeshStandardMaterial({
-        map: new TextureLoader().load(require("./icon.jpg")),
+        map: new TextureLoader().load(require("./pont.jpg")),
       })
     );
   }
